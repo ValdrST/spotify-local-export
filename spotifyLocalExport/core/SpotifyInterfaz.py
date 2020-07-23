@@ -9,7 +9,6 @@ class SpotifyInterfaz(object):
         lista = []
         offset = 0
         while True:
-
             response = self.sp.playlist_tracks(playlist_id,fields='items.track', limit=100, offset=offset)
             lista.extend(response["items"])
             

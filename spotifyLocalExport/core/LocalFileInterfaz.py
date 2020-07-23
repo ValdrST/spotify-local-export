@@ -50,6 +50,12 @@ class LocalFileInterfaz(object):
                 logging.error("Error con este archivo {} {}".format(filename, e))
         else:
             logging.info("Archivo no es audio {}".format(filename))
-        
+    
+    def cpyArchivo(self, filnameIn):
+        try:
+            shutil.copy(filnameIn, self.dirOutput)
+        except Exception as e:
+            logging.error("Error al copiar archivo {} {}".format(filnameIn, e))
+
     def getLocalTracks(self):
         return self.localTracks
